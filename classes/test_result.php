@@ -26,7 +26,7 @@
  */
 #[AllowDynamicProperties]
 class qtype_coderunner_test_result {
-    public function __construct($testcase, $iscorrect, $awardedmark, $got) {
+    public function __construct($testcase, $iscorrect, $awardedmark, $got, $jobtime = "", $mytime = "") {
         // Flatten testcase into this, tidying up text fields.
         foreach (get_object_vars($testcase) as $key => $value) {
             if (in_array($key, ['expected', 'testcode', 'stdin', 'extra'])) {
@@ -38,6 +38,8 @@ class qtype_coderunner_test_result {
         $this->iscorrect = $iscorrect;
         $this->awarded = $awardedmark;
         $this->got = qtype_coderunner_util::tidy($got);
+        $this->jobtime = $jobtime;
+        $this->mytime = $mytime;
     }
 
     // Return the value from this testresult as specified by the given

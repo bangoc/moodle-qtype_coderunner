@@ -307,6 +307,12 @@ class qtype_coderunner_jobrunner {
                     $testresult->iscorrect = false;
                     $aborting = true;
                 }
+                if (isset($run->jobtime)) {
+                    $testresult->jobtime = $run->jobtime;
+                }
+                if (isset($run->mytime)) {
+                    $testresult->mytime = $run->mytime;
+                }
                 $outcome->add_test_result($testresult);
                 if ($aborting) {
                     break;

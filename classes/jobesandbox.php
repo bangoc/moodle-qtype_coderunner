@@ -293,6 +293,8 @@ class qtype_coderunner_jobesandbox extends qtype_coderunner_sandbox {
                 $runresult['signal'] = 0; // Jobe doesn't return signals.
                 $runresult['cmpinfo'] = $this->response->cmpinfo;
                 $runresult['output'] = $this->filter_file_path($this->response->stdout);
+                $runresult['jobtime'] = $this->response->jobtime;
+                $runresult['mytime'] = $this->response->mytime;
 
                 // Got a useable result from Jobe server so cache it if required.
                 if (get_config('qtype_coderunner', 'enablegradecache') && $usecache) {

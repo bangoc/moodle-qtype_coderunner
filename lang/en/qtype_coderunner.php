@@ -943,6 +943,10 @@ testcode, stdin, expected and extra are the fields from the testcase while got
 is the actual output generated and awarded and mark are the actual awarded mark
 and the maximum mark for the testcase respsectively.
 
+bangoc added two time related fields: jobtime and mytime. Where the jobtime is 
+the sandbox time in Jobe backend and mytime is the time can be measured in 
+custom template code and should be written to a file with the name custom.time.
+
 Per-test template-graders may
 add their own fields, which can also be selected for display. It is also
 possible to combine multiple fields into a column by adding extra fields to the
